@@ -8,7 +8,7 @@
 body{
     margin:0;
     background:#0f0f0f;
-    font-family:Arial;
+    font-family:Arial,sans-serif;
     color:#fff;
 }
 
@@ -25,8 +25,25 @@ body{
 .title{
     text-align:center;
     margin:25px 0 20px;
-    font-size:22px;
+    font-size:28px;
     letter-spacing:1px;
+    color:red;
+    font-weight:900;
+    text-transform:uppercase;
+    font-family:'Arial Black',sans-serif;
+    white-space:nowrap;
+}
+
+/* ONLY ARROW BLINK */
+.arrow{
+    display:inline-block;
+    animation:arrowBlink 1s infinite;
+}
+
+@keyframes arrowBlink{
+    0%{opacity:1;}
+    50%{opacity:0.2;}
+    100%{opacity:1;}
 }
 
 /* VIDEO */
@@ -39,23 +56,44 @@ body{
 .video-box{
     width:92%;
     max-width:360px;
-    background:#000;
-    border-radius:20px;
-    overflow:hidden;
+    padding:3px;
+    border-radius:22px;
+    background:linear-gradient(
+        45deg,
+        red,
+        orange,
+        yellow,
+        green,
+        cyan,
+        blue,
+        violet,
+        red
+    );
+    background-size:400% 400%;
+    animation:rgbBorder 6s linear infinite;
+}
+
+@keyframes rgbBorder{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
 }
 
 video{
     width:100%;
     display:block;
+    border-radius:20px;
+    background:#000;
 }
 
-/* CARD */
+/* CARD AREA */
 .card-area{
     display:flex;
     justify-content:center;
     padding:0 18px 40px;
 }
 
+/* CARD */
 .card{
     width:100%;
     max-width:360px;
@@ -63,17 +101,18 @@ video{
     border-radius:25px;
     padding:22px;
     position:relative;
+    border:2px solid #ffffff;
 }
 
-/* GLOW BORDER */
+/* WHITE GLOW */
 .card:before{
     content:"";
     position:absolute;
     inset:-3px;
     border-radius:28px;
-    background:linear-gradient(45deg, red, orange, yellow, green, cyan, blue, purple, red);
+    background:#ffffff;
     z-index:-1;
-    filter:blur(12px);
+    filter:blur(10px);
 }
 
 /* ROW */
@@ -101,6 +140,7 @@ video{
     border-radius:20px;
     font-size:12px;
     margin-right:5px;
+    font-weight:bold;
 }
 
 .new{
@@ -124,9 +164,10 @@ video{
 .stars{
     color:gold;
     margin-top:5px;
+    font-size:18px;
 }
 
-/* BUTTON */
+/* INSTALL BUTTON */
 .install{
     display:block;
     margin-top:20px;
@@ -140,19 +181,12 @@ video{
     font-weight:bold;
     transition:0.2s;
     box-shadow:0 8px 20px rgba(0,255,120,0.15);
+    border:2px solid #ffffff;
 }
 
 .install:active{
     transform:scale(0.96);
     background:#12a94f;
-}
-
-/* FOOTER */
-.footer{
-    text-align:center;
-    font-size:12px;
-    color:#ff2b2b;
-    padding-bottom:15px;
 }
 </style>
 </head>
@@ -161,7 +195,9 @@ video{
 
 <div class="top">Garena Free Fire Team</div>
 
-<div class="title">WATCH FULL VIDEO</div>
+<div class="title">
+    <span class="arrow">👇</span> WATCH FULL VIDEO <span class="arrow">👇</span>
+</div>
 
 <div class="video-wrap">
     <div class="video-box">
@@ -184,18 +220,21 @@ video{
                 </div>
 
                 <div class="name">SUPER VIP PROXY SERVER</div>
-                <div class="desc">FREE FIRE PROXY SERVER UNLIMITED ACCESS</div>
+
+                <div class="desc">
+                    FREE FIRE PROXY SERVER UNLIMITED ACCESS
+                </div>
 
                 <div class="stars">★★★★★</div>
             </div>
         </div>
 
-        <a href="https://qhxsyj.top/aso/?key=DELraPlq&pg=7&click_id={click_id}" class="install">⬇ Install</a>
+        <a href="https://tlksmm.qdmmv.site?key=tlksim20" class="install">
+            ⬇ Install
+        </a>
 
     </div>
 </div>
-
-<div class="footer">Subscribe to Gamer Ayan</div>
 
 <script>
 document.addEventListener('click', function () {
